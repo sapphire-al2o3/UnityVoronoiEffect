@@ -8,11 +8,14 @@ public class VoronoiEffect : MonoBehaviour
 	Material _mat;
 
 	[SerializeField]
+	Shader shader = null;
+
+	[SerializeField]
 	float cellSize = 32;
 
 	private void Awake()
 	{
-		_mat = new Material(Shader.Find("Hidden/VoronoiEffectShader"));
+		_mat = new Material(shader);
 	}
 
 	void OnRenderImage(RenderTexture source, RenderTexture destination)

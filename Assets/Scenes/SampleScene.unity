@@ -495,6 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6400dca122b52439bae9395e26c933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 5337a243340054f4b95d27435207573b, type: 3}
   cellSize: 32
 --- !u!1 &1594161742
 GameObject:
