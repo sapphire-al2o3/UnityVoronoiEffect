@@ -12,13 +12,14 @@ public class CameraClipping : MonoBehaviour
 		var commandBuffer = new CommandBuffer();
 		commandBuffer.name = "Clipping";
 		commandBuffer.EnableScissorRect(new Rect(0, 0, 0, 0));
-		//commandBuffer.SetViewport(new Rect(0, 0, 100, 100));
+
+		commandBuffer.SetViewport(new Rect(0, 0, 100, 100));
 		var camera = GetComponent<Camera>();
 
 		//var material = new Material(Shader.Find("Standard"));
 		//commandBuffer.DrawMesh(_mesh, Matrix4x4.identity, material, 0, 0);
 
-		camera.AddCommandBuffer(CameraEvent.BeforeForwardOpaque, commandBuffer);
+		camera.AddCommandBuffer(CameraEvent.AfterForwardOpaque, commandBuffer);
 
 		Debug.Log(camera.commandBufferCount);
 	}

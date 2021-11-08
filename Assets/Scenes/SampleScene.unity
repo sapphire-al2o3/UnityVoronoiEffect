@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 157438475}
   - component: {fileID: 157438474}
   - component: {fileID: 157438473}
+  - component: {fileID: 157438476}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -246,9 +247,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 157438472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1361da3776e1a784c86f5c09262f2cd7, type: 3}
+  m_Script: {fileID: 11500000, guid: 00b1d2921137658458f84d3d5088c9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scissorRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0.5
+    height: 1
 --- !u!20 &157438474
 Camera:
   m_ObjectHideFlags: 0
@@ -306,6 +313,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &157438476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157438472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 189fbc9e80d81cd4f869d9e63a7cc4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftScreen: {fileID: 157438473}
+  rightScreen: {fileID: 963194230}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +432,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -497,6 +519,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 5337a243340054f4b95d27435207573b, type: 3}
   cellSize: 32
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b1d2921137658458f84d3d5088c9c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scissorRect:
+    serializedVersion: 2
+    x: 0.5
+    y: 0
+    width: 0.5
+    height: 1
 --- !u!1 &1594161742
 GameObject:
   m_ObjectHideFlags: 0
