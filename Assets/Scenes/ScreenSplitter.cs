@@ -27,14 +27,20 @@ public class ScreenSplitter : MonoBehaviour
 				x = w;
 			}
 
-			Rect r = new Rect(0.0f, 0.0f, 1.0f, 1.0f);
-			r.width = x / w;
-			leftScreen.enabled = true;
-			leftScreen.scissorRect = r;
-			r.x = r.width;
-			r.width = (w - x) / w;
-			rightScreen.enabled = true;
-			rightScreen.scissorRect = r;
+			Rect r = new Rect(0.0f, 0.0f, 0.0f, 1.0f);
+			if (x > 0)
+			{
+				r.width = x / w;
+				leftScreen.enabled = true;
+				leftScreen.scissorRect = r;
+			}
+			if (x < w)
+			{
+				r.x = r.width;
+				r.width = (w - x) / w;
+				rightScreen.enabled = true;
+				rightScreen.scissorRect = r;
+			}
 		}
 	}
 }
