@@ -5,22 +5,22 @@ using UnityEngine.Rendering;
 
 public class CameraClipping : MonoBehaviour
 {
-	void Awake()
+    void Awake()
     {
 
 
-		var commandBuffer = new CommandBuffer();
-		commandBuffer.name = "Clipping";
-		commandBuffer.EnableScissorRect(new Rect(0, 0, 0, 0));
+        var commandBuffer = new CommandBuffer();
+        commandBuffer.name = "Clipping";
+        commandBuffer.EnableScissorRect(new Rect(0, 0, 0, 0));
 
-		commandBuffer.SetViewport(new Rect(0, 0, 100, 100));
-		var camera = GetComponent<Camera>();
+        commandBuffer.SetViewport(new Rect(0, 0, 100, 100));
+        var camera = GetComponent<Camera>();
 
-		//var material = new Material(Shader.Find("Standard"));
-		//commandBuffer.DrawMesh(_mesh, Matrix4x4.identity, material, 0, 0);
+        //var material = new Material(Shader.Find("Standard"));
+        //commandBuffer.DrawMesh(_mesh, Matrix4x4.identity, material, 0, 0);
 
-		camera.AddCommandBuffer(CameraEvent.AfterForwardOpaque, commandBuffer);
+        camera.AddCommandBuffer(CameraEvent.AfterForwardOpaque, commandBuffer);
 
-		Debug.Log(camera.commandBufferCount);
-	}
+        Debug.Log(camera.commandBufferCount);
+    }
 }
